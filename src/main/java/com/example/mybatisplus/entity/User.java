@@ -1,6 +1,8 @@
 package com.example.mybatisplus.entity;
 
-import com.baomidou.ant.common.BaseEntity;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -14,11 +16,17 @@ import lombok.experimental.Accessors;
  * @since 2019-09-19
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class User extends BaseEntity {
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    /**
+     * 索引id
+     */
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
 
     /**
      * 用户角色类型(0管理员,2老师可以发学院帖子,1学生不可以)

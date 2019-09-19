@@ -4,7 +4,6 @@ package com.example.mybatisplus.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
-import com.baomidou.ant.common.BaseController;
 
 /**
  * <p>
@@ -16,6 +15,6 @@ import com.baomidou.ant.common.BaseController;
  */
 @RestController
 @RequestMapping("/user")
-public class UserController extends BaseController {
+public class UserController {
 
 }

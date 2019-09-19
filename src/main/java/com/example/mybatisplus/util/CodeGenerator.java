@@ -120,13 +120,13 @@ public class CodeGenerator {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass("com.baomidou.ant.common.BaseEntity");
+        //strategy.setSuperEntityClass("com.baomidou.ant.common.BaseEntity");
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
         // 公共父类
-        strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
-        // 写于父类中的公共字段
-        strategy.setSuperEntityColumns("id");
+        //strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
+        // 如果上面父类设置了，则把下面的注释取消 写于父类中的公共字段
+        //strategy.setSuperEntityColumns("id");
         strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
         strategy.setControllerMappingHyphenStyle(true);
 
