@@ -14,7 +14,6 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 import javax.annotation.Resource;
@@ -25,7 +24,7 @@ import java.util.Map;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SelectTest {
+public class selectTest {
     @Resource
     private UserMapper userMapper;
 
@@ -143,7 +142,7 @@ public class SelectTest {
         Page<User> page = new Page<>(1,5);
 
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.ne("id",0);
+        queryWrapper.ne("id",0).orderByDesc("id");
 
         IPage iPage = userMapper.selectPage(page, queryWrapper);
         //上面的那些等同于下面

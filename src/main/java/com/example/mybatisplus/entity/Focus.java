@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author zhaoyy
- * @since 2019-09-20
+ * @since 2019-09-24
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -37,6 +37,8 @@ public class Focus implements Serializable {
      * 被关注者的索引id
      */
     private String focusedId;
+
+    private Integer deleted;
 
 
 }
