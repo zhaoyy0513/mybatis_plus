@@ -1,6 +1,9 @@
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.example.mybatisplus.entity
+  configuration:
+    #当selectByMap返回的实体某个字段为空时，返回null，如果不设置这个则实体字段为空时就不返回该字段，这是不符合逻辑的，所以加上
+    call-setters-on-nulls: true
 
 spring:
   datasource:
